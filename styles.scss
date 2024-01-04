@@ -129,19 +129,21 @@
   align-content: flex-start;
   position: absolute;
   z-index: 2;
-  padding: 20px;
+  padding: 10px 20px;
   margin-top: 20vh;
   width: 200px;
-  height: 325px;
+  height: 350px;
 
-  background-color: white;
+  background-color: #fdea88;
   box-shadow: 0 0 20px rgb(50, 50, 50);
-  border-radius: 20px;
+  border: 10px solid #e4c11b;
+  border-radius: 10px;
 
   &__close {
     display: flex;
     justify-content: flex-end;
     min-width: 100%;
+    margin: 10px 0;
 
     &__img {
       height: 15px;
@@ -159,39 +161,105 @@
   &__info {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
 
     &__title {
+      margin: 10px 0 0 0;
+
       font-weight: 1000;
+      font-size: 14px;
     }
 
     &__name {
-      margin: 0;
-      min-width: 100%;
+      margin: 0 0 10px 0;
+      min-width: 50%;
 
       font-weight: 1000;
-      text-align: center;
     }
 
     &__img {
-      min-width: 100%;
-      height: 100px;
+      min-width: 95%;
+      height: 98px;
       object-fit: contain;
+      margin-bottom: 10px;
+
+      border: 5px solid #cfa92a;
+      background-image: url(https://i2.wp.com/pokemonrevolution.net/forum/uploads/monthly_2021_03/DVMT-6OXcAE2rZY.jpg.afab972f972bd7fbd4253bc7aa1cf27f.jpg);
+      background-size: contain;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     }
 
     &__type {
-      min-width: 100%;
+      min-width: 50%;
       margin: 0;
+
+      text-align: right;
+      font-size: 13px;
     }
 
     &__abilities {
       min-width: 100%;
       margin: 0;
+
+      font-size: 13px;
     }
   }
 
   &--hidden {
     display: none;
+  }
+
+  &--grass,
+  &--bug {
+    background-color: #b6d884;
+  }
+
+  &--normal,
+  &--flying,
+  &--steel {
+    background-color: #cfcfcf;
+  }
+
+  &--fighting,
+  &--ground,
+  &--rock {
+    background-color: #dbb385;
+  }
+
+  &--poison,
+  &--ghost,
+  &--psychic {
+    background-color: #b182c7;
+  }
+
+  &--fire {
+    background-color: #fd8568;
+  }
+
+  &--water,
+  &--ice {
+    background-color: #82b6d4;
+  }
+
+  &--electric {
+    background-color: #fcec61;
+  }
+
+  &--dragon {
+    background-color: #dad745;
+  }
+
+  &--dark {
+    color: white;
+    background-color: #144e4b;
+  }
+
+  &--fairy {
+    background-color: #fc94d4;
+  }
+
+  &--shadow {
+    color: white;
+    background-color: #333333;
   }
 }
 

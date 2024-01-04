@@ -10,15 +10,28 @@ export const generateRandomIds = (numOfIds) => {
   return idsArr;
 };
 
-export const generatePromise = (pokemonId) => {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+export const generatePromise = (url) => {
+  // return fetch(`https://pokeapi.co/api/v2/pokemon/${query}`);
+  return fetch(url);
+};
+
+export const getAbilityDesc = async (abilities) => {
+  const promises = [];
+
+  for (let i = 0; i < abilities.length; i++) {
+    const promise = generatePromise(abilities[i]);
+    promises.push(promise);
+  }
+
+  return await Promise.all(promises);
 };
 
 export const getPokemon = async (pokemonIds) => {
   const promises = [];
 
   for (let i = 0; i < pokemonIds.length; i++) {
-    const promise = generatePromise(pokemonIds[i]);
+    const url = "https://pokeapi.co/api/v2/pokemon/";
+    const promise = generatePromise(`${url}${pokemonIds[i]}`);
     promises.push(promise);
   }
 

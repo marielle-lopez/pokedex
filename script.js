@@ -1,4 +1,4 @@
-import { generateRandomIds, getPokemon } from "./pokemon.js";
+import { generateRandomIds, getPokemon, getAbilityDesc } from "./pokemon.js";
 import {
   addCard,
   displayAllPokemon,
@@ -27,8 +27,24 @@ window.addEventListener("DOMContentLoaded", async () => {
       name: name,
       type: type,
       imgURL: imgURL,
-      abilities: abilities,
+      abilities: [],
     };
+
+    const abilityURLs = object["abilities"].map((item) => item.ability.url);
+
+    const abilitiesDescObj = await getAbilityDesc(abilityURLs);
+
+    abilitiesDescObj.map(async (item) => {
+      const abilityObject = await item.json();
+      const ability = {
+        name: abilityObject.name,
+        description: abilityObject["effect_entries"][1]["short_effect"],
+      };
+
+      pokemon.abilities.push(ability);
+
+      // console.log(abilityObject);
+    });
 
     addCard(pokemon, cardsContainer);
 
