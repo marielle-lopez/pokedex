@@ -1,10 +1,14 @@
-import { generateRandomIds, getPokemon, getAbilityDesc } from "./pokemon.js";
+import {
+  generateRandomIds,
+  getPokemon,
+  getAbilityDesc,
+} from "./scripts/pokemon.js";
 import {
   addCard,
   displayAllPokemon,
   filterPokemon,
   showDetails,
-} from "./dom.js";
+} from "./scripts/dom.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
   const cardsContainer = document.querySelector(".cards");
