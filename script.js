@@ -1,5 +1,10 @@
 import { generateRandomIds, getPokemon } from "./pokemon.js";
-import { addCard, displayAllPokemon, filterPokemon } from "./dom.js";
+import {
+  addCard,
+  displayAllPokemon,
+  filterPokemon,
+  showDetails,
+} from "./dom.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
   const cardsContainer = document.querySelector(".cards");
@@ -24,11 +29,17 @@ window.addEventListener("DOMContentLoaded", async () => {
       imgURL: imgURL,
       abilities: abilities,
     };
+
     addCard(pokemon, cardsContainer);
+
+    // document.querySelector(`#${pokemon.name}`).addEventListener("click", () => {
+    //   alert(
+    //     `${pokemon.name}'s abilities: \n- ${pokemon.abilities.join("\n- ")}`
+    //   );
+    // });
+
     document.querySelector(`#${pokemon.name}`).addEventListener("click", () => {
-      alert(
-        `${pokemon.name}'s abilities: \n- ${pokemon.abilities.join("\n- ")}`
-      );
+      showDetails(pokemon);
     });
   });
 
@@ -39,5 +50,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   document.querySelector(".search__reset-btn").addEventListener("click", () => {
     displayAllPokemon();
     document.querySelector(".search__textbox").value = "";
+  });
+
+  document.querySelector(".modal__close__img").addEventListener("click", () => {
+    document.querySelector(".modal").classList.add("modal--hidden");
   });
 });

@@ -43,3 +43,73 @@ export const filterPokemon = () => {
     }
   }
 };
+
+export const showDetails = (pokemon) => {
+  if (document.querySelector(".modal__info")) {
+    document.querySelector(".modal__info").remove();
+  }
+
+  const modal = document.querySelector(".modal");
+  modal.classList.remove("modal--hidden");
+
+  const textNodeName = document.createTextNode(pokemon.name);
+  const textNodeType = document.createTextNode(pokemon.type.join(", "));
+  const textNodeTypeTitle = document.createTextNode("type: ");
+  const textNodeAbilities = document.createTextNode(
+    pokemon.abilities.join(", ")
+  );
+  const textNodeAbilitiesTitle = document.createTextNode("abilities: ");
+
+  const elementNodeName = document.createElement("p");
+  elementNodeName.classList.add("modal__info__name");
+  const elementNodeImg = document.createElement("img");
+  elementNodeImg.classList.add("modal__info__img");
+  const elementNodeType = document.createElement("p");
+  const elementNodeTypeTitle = document.createElement("span");
+  elementNodeTypeTitle.classList.add("modal__info__title");
+  elementNodeType.classList.add("modal__info__type");
+  const elementNodeAbilities = document.createElement("p");
+  const elementNodeAbilitiesTitle = document.createElement("span");
+  elementNodeAbilitiesTitle.classList.add("modal__info__title");
+  elementNodeAbilities.classList.add("modal__info__abilities");
+
+  const elementNodeInfo = document.createElement("div");
+  elementNodeInfo.classList.add("modal__info");
+  modal.appendChild(elementNodeInfo);
+
+  elementNodeName.append(textNodeName);
+  elementNodeImg.src = pokemon.imgURL;
+  elementNodeTypeTitle.append(textNodeTypeTitle);
+  elementNodeType.append(elementNodeTypeTitle);
+  elementNodeType.append(textNodeType);
+  elementNodeAbilitiesTitle.append(textNodeAbilitiesTitle);
+  elementNodeAbilities.append(elementNodeAbilitiesTitle);
+  elementNodeAbilities.append(textNodeAbilities);
+
+  elementNodeInfo.appendChild(elementNodeName);
+  elementNodeInfo.appendChild(elementNodeImg);
+  elementNodeInfo.appendChild(elementNodeType);
+  elementNodeInfo.appendChild(elementNodeAbilities);
+
+  // const textNodeName = document.createTextNode(pokemon.name);
+  // const textNodeType = document.createTextNode(`${pokemon.type.join(", ")}`);
+  // const textNodeAbilities = document.createTextNode(
+  //   `${pokemon.abilities.join(", ")}`
+  // );
+
+  // const elementNodeName = document.querySelector(`.modal__info__name`);
+  // const elementNodeImg = document.querySelector(".modal__info__img");
+  // const elementNodeType = document.querySelector(`.modal__info__type`);
+
+  // const elementNodeAbilities = document.querySelector(
+  //   `.modal__info__abilities`
+  // );
+
+  // elementNodeName.append(textNodeName);
+  // elementNodeImg.src = pokemon.imgURL;
+  // elementNodeType.append(textNodeType);
+  // elementNodeAbilities.append(textNodeAbilities);
+
+  // modal.appendChild(elementNodeName);
+  // modal.appendChild(elementNodeAbilities);
+};

@@ -94,3 +94,61 @@
 .card:hover {
   background-color: white;
 }
+
+.modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  position: absolute;
+  z-index: 2;
+  padding: 20px;
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  box-shadow: 0 0 20px rgb(50, 50, 50);
+  border-radius: 20px;
+}
+.modal__close {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 100%;
+}
+.modal__close__img {
+  height: 15px;
+  width: 15px;
+  opacity: 50%;
+  transition: 0.5s;
+}
+.modal__close__img:hover {
+  opacity: 100%;
+}
+.modal__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.modal__info__title {
+  font-weight: 1000;
+}
+.modal__info__name {
+  margin: 0;
+  min-width: 100%;
+  font-weight: 1000;
+  text-align: center;
+}
+.modal__info__img {
+  min-width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+.modal__info__type {
+  min-width: 100%;
+  margin: 0;
+}
+.modal__info__abilities {
+  min-width: 100%;
+  margin: 0;
+}
+.modal--hidden {
+  display: none;
+}
