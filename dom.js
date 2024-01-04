@@ -49,6 +49,9 @@ export const showDetails = (pokemon) => {
     document.querySelector(".modal__info").remove();
   }
 
+  const overlay = document.querySelector(".overlay");
+  overlay.classList.remove("overlay--hidden");
+
   const modal = document.querySelector(".modal");
   modal.classList.remove("modal--hidden");
 

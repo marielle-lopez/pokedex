@@ -54,5 +54,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelector(".modal__close__img").addEventListener("click", () => {
     document.querySelector(".modal").classList.add("modal--hidden");
+    document.querySelector(".overlay").classList.add("overlay--hidden");
   });
 });
