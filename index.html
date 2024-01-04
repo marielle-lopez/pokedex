@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap"
       rel="stylesheet"
     />
     <script type="module" src="./script.js"></script>
@@ -21,6 +21,18 @@
         alt="Pokemon logo"
       />
       <span class="page-heading__text">Pokédex</span>
+    </div>
+
+    <div class="search">
+      <input type="text" class="search__textbox" />
+      <button class="search__button">Search</button>
+      <button class="search__reset-btn">Reset</button>
+    </div>
+
+    <div class="pokedex-frame">
+      <div class="cards">
+        <p class="cards__loading-msg">Getting Pokémon data...</p>
+      </div>
     </div>
   </body>
 </html>

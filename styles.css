@@ -1,6 +1,8 @@
 .body {
   display: flex;
-  font-family: "Puritan", sans-serif;
+  flex-wrap: wrap;
+  margin: 0 10vw;
+  font-family: "VT323", sans-serif;
   background-color: #fdf1bf;
 }
 
@@ -9,13 +11,86 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 100%;
-  margin-top: 10px;
+  min-width: 100%;
+  margin: 10px 0 30px 0;
 }
 .page-heading__logo {
   height: 75px;
 }
 .page-heading__text {
-  font-family: "Pixelify Sans", sans-serif;
   font-size: 50px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  min-width: 100%;
+  margin-bottom: 40px;
+}
+.search__textbox {
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+.search__button {
+  font-family: "VT323", sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1c958;
+  transition: 0.3s;
+}
+.search__button:hover {
+  background-color: #be9628;
+}
+.search__reset-btn {
+  font-family: "VT323", sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: #dfdfdf;
+  transition: 0.3s;
+}
+.search__reset-btn:hover {
+  background-color: #afaeae;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  transition: 0.5s;
+}
+.card__name {
+  text-align: center;
+  min-width: 100%;
+  margin: 0;
+  font-weight: 1000;
+  font-size: 12px;
+}
+.card__type {
+  text-align: center;
+  margin: 0;
+  min-width: 100%;
+  font-size: 10px;
+}
+.card__img {
+  height: 50px;
+}
+.card--hide {
+  display: none;
+}
+.card:hover {
+  background-color: white;
 }
